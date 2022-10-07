@@ -1,0 +1,72 @@
+{
+    "sites": [
+        {
+            "ip": "47.92.169.107",
+            "user": "root",
+            "port": 11003,
+            "dbuser": "root",
+            "dbpasswd": "123456",
+            "rootPath": "/opt/gStore"
+        },
+        {
+            "ip": "47.92.169.107",
+            "user": "root",
+            "port": 11004,
+            "dbuser": "root",
+            "dbpasswd": "123456",
+            "rootPath": "/opt/gStore"
+        },
+        {
+            "ip": "47.92.169.107",
+            "user": "root",
+            "port": 10003,
+            "dbuser": "root",
+            "dbpasswd": "123456",
+            "rootPath": "/opt/gStore"
+        },
+        {
+            "ip": "47.92.162.13",
+            "user": "root",
+            "port": 11004,
+            "dbuser": "root",
+            "dbpasswd": "123456",
+            "rootPath": "/opt/gStore"
+        },
+		{
+            "ip": "47.92.162.13",
+            "user": "root",
+            "port": 11005,
+            "dbuser": "root",
+            "dbpasswd": "123456",
+            "rootPath": "/opt/gStore"
+        },
+		{
+            "ip": "47.92.162.13",
+            "user": "root",
+            "port": 11006,
+            "dbuser": "root",
+            "dbpasswd": "123456",
+            "rootPath": "/opt/gStore"
+        },
+		{
+            "ip": "47.92.162.13",
+            "user": "root",
+            "port": 11007,
+            "dbuser": "root",
+            "dbpasswd": "123456",
+            "rootPath": "/opt/gStore"
+        },
+		{
+            "ip": "47.92.162.13",
+            "user": "root",
+            "port": 11008,
+            "dbuser": "root",
+            "dbpasswd": "123456",
+            "rootPath": "/opt/gStore"
+        }
+
+
+
+
+    ]
+}
