@@ -65,6 +65,9 @@ int divide(std::string ntfile, std::string dividefile)
         ridx = line.find_first_of('>', ridx+1);
 
         int subPartID = entity2id[subject];
+        outfiles[subPartID] << line << "\n";
+        s[subPartID].insert(subject + "\t" + "<http://property/isInCurrPart>" + "\t" + "\"1\" .\n");
+        
         if(lidx != std::string::npos)
         {
             object = line.substr(lidx, ridx-lidx+1);
@@ -73,31 +76,17 @@ int divide(std::string ntfile, std::string dividefile)
                 int objPartID = entity2id[object];
                 if(subPartID == objPartID)
                 {
-                    outfiles[subPartID] << line << "\n";
-                    s[subPartID].insert(subject + "\t" + "<http://property/isInCurrPart>" + "\t" + "\"1\" .\n");
                     s[subPartID].insert(object + "\t" + "<http://property/isInCurrPart>" + "\t" + "\"1\" .\n");
                 }
                 else
                 {
-                    outfiles[subPartID] << line << "\n";
-                    s[subPartID].insert(subject + "\t" + "<http://property/isInCurrPart>" + "\t" + "\"1\" .\n");
                     s[subPartID].insert(object + "\t" + "<http://property/isInCurrPart>" + "\t" + "\"0\" .\n");
 
                     outfiles[objPartID] << line << "\n";
-                    s[subPartID].insert(subject + "\t" + "<http://property/isInCurrPart>" + "\t" + "\"0\" .\n");
-                    s[subPartID].insert(object + "\t" + "<http://property/isInCurrPart>" + "\t" + "\"1\" .\n");
+                    s[objPartID].insert(subject + "\t" + "<http://property/isInCurrPart>" + "\t" + "\"0\" .\n");
+                    s[objPartID].insert(object + "\t" + "<http://property/isInCurrPart>" + "\t" + "\"1\" .\n");
                 }
             }
-            else
-            {
-                outfiles[subPartID] << line << "\n";
-                s[subPartID].insert(subject + "\t" + "<http://property/isInCurrPart>" + "\t" + "\"1\" .\n");
-            }
-        }
-        else
-        {
-            outfiles[subPartID] << line << "\n";
-            s[subPartID].insert(subject + "\t" + "<http://property/isInCurrPart>" + "\t" + "\"1\" .\n");
         }
     }
 
