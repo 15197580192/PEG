@@ -63,6 +63,7 @@ In `Sites`, add site objects:：
 
 > Note: To ensure the normal running of the program, PEG needs to log in to the site configured above without password and the gStore http service has been started.  
 > To start gStore http service, firstly get into gStore root path, then run `./bin/ghttp port_num`.
+> And we are using gStore version 0.8 here.
 
 ### How to run
 
