@@ -59,7 +59,7 @@ make
 [root@localhost gStoreDemo]$ ./build/PEG_Server
 
 # 命令行新建数据库
-[root@localhost gStoreDemo]$ ./build/PEG_Load 数据库名 nt文件路径
+[root@localhost gStoreDemo]$ ./build/PEG_Load 数据库名 nt文件路径 划分文件路径
 
 # 命令行查询
 [root@localhost gStoreDemo]$ ./build/PEG_Query 数据库名 SPARQL文件路径
