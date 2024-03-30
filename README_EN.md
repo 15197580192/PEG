@@ -73,7 +73,7 @@ In the project directory:
 [root@localhost gStoreDemo]$ ./build/PEG_Server
 
 # Create a new database from the command line 
-[root@localhost gStoreDemo]$ ./build/PEG_Load db_name /path/to/nt/file
+[root@localhost gStoreDemo]$ ./build/PEG_Load db_name /path/to/nt/file /path/to/nt/dividefile
 
 # Query from the command line 
 [root@localhost gStoreDemo]$ ./build/PEG_Query db_name /path/to/SPARQL/file
