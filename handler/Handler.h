@@ -173,21 +173,21 @@ std::string query(crow::json::rvalue &confJson, std::vector<GstoreConnector*> &s
     int part = confJson["sites"].size();
 
     // load
-    // buildThreadArgs bta[part];
-    // pthread_t load_pthrds[part];
-    // for (int i = 0; i < part; i++)
-    // {
-    //     crow::json::rvalue site = confJson["sites"][i];
-    //     bta[i].gcp = servers[i];
-    //     bta[i].dbname = dbname;
-    //     if (pthread_create(&load_pthrds[i], NULL, loadThread, &bta[i]) != 0)
-    //     {
-    //         throw runtime_error("creates load thread error!");
-    //     }
-    // }
-    // for (int i = 0; i < part; i++)
-    //     pthread_join(load_pthrds[i], NULL);
-    // std::cout << "all dbs invoked load." << std::endl;
+    buildThreadArgs bta[part];
+    pthread_t load_pthrds[part];
+    for (int i = 0; i < part; i++)
+    {
+         crow::json::rvalue site = confJson["sites"][i];
+         bta[i].gcp = servers[i];
+         bta[i].dbname = dbname;
+         if (pthread_create(&load_pthrds[i], NULL, loadThread, &bta[i]) != 0)
+         {
+             throw runtime_error("creates load thread error!");
+         }
+     }
+    for (int i = 0; i < part; i++)
+         pthread_join(load_pthrds[i], NULL);
+     std::cout << "all dbs invoked load." << std::endl;
     
 
     // query
